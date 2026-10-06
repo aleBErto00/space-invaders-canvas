@@ -2,7 +2,7 @@
 
 A classic 2D arcade shooter built from scratch using modern Vanilla JavaScript, CSS, and the native HTML5 Canvas API, without external frameworks or dependencies.
 
-[Live Demo](https://tuo-username.github.io/space-invaders-canvas/)
+[Live Demo](https://github.com/aleBErto00/space-invaders-canvas)
 
 ---
 

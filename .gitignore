@@ -1,0 +1,14 @@
+# File di sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Configurazioni IDE ed editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# File di log e temporanei
+*.log
+*.tmp

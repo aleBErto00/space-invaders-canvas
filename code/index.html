@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACE-SHOOTER CANVAS</title>
+    
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="color_typo.css"> 
+</head>
+<body>
+
+    <main id="game-container">
+        
+        <div id="main-content">
+            
+            <div id="sidebar">
+                <div class="sidebar-info">
+                    <span class="sidebar-label">LIFE</span>
+                    <span class="sidebar-value" id = 'lives-display'>3</span>
+                </div>
+
+                <div class="sidebar-info">
+                    <span class="sidebar-label">SCORE</span>
+                    <span class="sidebar-value" id = 'score-display'>0</span>
+                </div>
+
+                <div class="sidebar-info">
+                    <span class="sidebar-label">SHOOTED PROJECTILES</span>
+                    <span class="sidebar-value"  id = 'shooted-display'>0</span>
+
+                </div>
+
+                <div class="sidebar-info">
+                    <span class="sidebar-label">ENEMIES KILLED</span>
+                    <span class="sidebar-value"  id = 'enemies-display'>0</span>
+                </div>
+
+                <div class="sidebar-info">
+                    <span class="sidebar-label record-label">HIGH SCORE</span>
+                    <span class="sidebar-value record-value" id = 'highscore-display'>0</span>
+                </div>
+
+            </div>
+
+            <div id="game-area">
+                
+                <div id="start-menu" class="overlay">
+                    <div class="modal-box">
+                        <h1>ASTRO SHOOTER</h1>
+                        <p class="subtitle">Defend yourself from aliens!</p>
+                        
+                        <div id="difficulty-selector"> 
+                            <h3>Set difficulty:</h3>
+                            <button id="diff-easy" class="diff-btn" data-level="easy">Easy</button>
+                            <button id="diff-medium" class="diff-btn selected" data-level="medium">Medium</button>
+                            <button id="diff-hard" class="diff-btn" data-level="hard">Hard</button>
+                        </div>
+                        
+                        <button id="start-button">START GAME</button>
+                        <button id="rules-button">RULES</button>
+                    </div>
+                </div>
+
+                <div id="rules-panel" class="overlay hidden">
+                    <div class="modal-box">
+                        <h2>RULES</h2>
+                        <ul>
+                            <li>Score the most points you can killing aliens</li>
+                            <li>Point and shoot with your mouse, but don't waste your projectiles!</li>
+                            <li>More projectiles you shoot, less will be your score</li>
+                            <li>Be Careful to not be hit from aliens</li>
+                            <li>Different aliens have different characteristics</li>
+                        </ul>
+                        <button id="close-rules-button">CLOSE</button>
+                    </div>
+                </div>
+                
+                <div id="game-over-panel" class="overlay hidden">
+                    <div class="modal-box">
+                        <h2>GAME OVER!</h2>
+                        <p>You are dead. In space no one can hear you scream.</p> <!--alien quote -->
+                        <p>Final Score: <span id="final-score">0</span></p>
+                        <p>Projectiles Shooted: <span id="final-shooted">0</span></p>
+                        <p>Enemies Killed: <span id="final-killed">0</span></p>
+                        <button id="restart-button">RIGIOCA</button>
+                    </div>
+                </div>
+                
+                <div id="pause-panel" class="overlay hidden">
+                    <div class="modal-box">
+                        <h2>GAME PAUSED</h2>
+                        <p>Press ESC/P/SPACE to continue.</p>
+                        <button id="settings-menu-button">SETTINGS</button>                        
+                        <button id="resume-button">RESUME</button>
+                        <button id="restart-button-2">RESTART</button> 
+                    </div>
+                </div>
+
+                <div id="settings-panel" class="overlay hidden">
+                    <div class="modal-box">
+                        <h2>SETTINGS</h2>
+        
+                        <div class="settings-group">
+                            <h3>AUDIO</h3>
+                            <button id="toggle-audio-button">Audio: ON</button> 
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>RULES</h3>
+                            <button id="view-rules-from-settings">SHOW RULES</button>
+                        </div>
+
+                        <button id="close-settings-button">BACK TO PAUSE MENU</button>
+                    </div>
+                </div>
+
+                <canvas id="game-canvas" width="800" height="600"></canvas>
+                
+
+            </div> </div> </main>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

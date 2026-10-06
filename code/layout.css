@@ -1,0 +1,251 @@
+/* layout.css*/
+
+/* --- BASE LAYOUT --- */
+
+body {
+    height: 100vh;
+    overflow: hidden; 
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+/* --- SIDEBAR --- */
+
+#sidebar {
+    width: 240px; 
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+    background-color: rgba(var(--color-background-solid), 0.5); 
+    border: 2px solid var(--color-secondary);
+    border-radius: 0; 
+    box-shadow: 0 0 15px rgba(var(--color-secondary), 0.8); 
+    margin-right: 30px; 
+    z-index: 20;
+    border-image: linear-gradient(45deg, var(--color-secondary) 0%, transparent 50%, var(--color-secondary) 100%) 1;
+}
+
+.sidebar-info {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--color-primary); 
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.sidebar-label {
+    font-family: var(--font-title);
+    font-size: 1.4em; 
+    color: var(--color-secondary);
+    text-shadow: 0 0 5px var(--color-secondary);
+    margin: 0;
+    margin-bottom: 3px; 
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+}
+
+
+.sidebar-value {
+    font-family: var(--font-main);
+    font-size: 1.8em; 
+    color: var(--color-primary);
+    text-shadow: 0 0 10px var(--color-primary);
+    margin: 0;
+    text-align: center;
+    display: block;
+    padding-bottom: 5px;
+}
+
+.record-label {
+    color: var(--color-tertiary);
+    text-shadow: 0 0 5px var(--color-tertiary);
+}
+.record-value {
+    color: var(--color-tertiary);
+    text-shadow: 0 0 10px var(--color-tertiary);
+}
+
+
+/* --- GAME AREA --- */
+
+#game-area {
+    position: relative;
+    width: 800px; 
+    height: 600px;
+}
+
+/* --- CANVAS (INPUT TARGET) --- */
+
+#game-canvas {
+    display: block; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 20; 
+    width: 800px; 
+    height: 600px; 
+    
+    border: 3px solid var(--color-primary);
+    box-shadow: 0 0 20px var(--color-primary);
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+
+
+/* --- OVERLAYS UI --- */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(10, 10, 15, 0.85); 
+}
+
+.modal-box {
+    width: 85%;
+    max-width: 450px; 
+    padding: 30px 40px; 
+    
+    background-color: var(--color-background-solid); 
+    border: 1px solid var(--color-tertiary); 
+    border-radius: 4px; 
+    text-align: center;
+    box-shadow: 0 0 15px var(--color-tertiary), 0 0 30px rgba(var(--color-tertiary), 0.5);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-box button {
+    width: 85%; 
+    max-width: 300px;
+    margin: 15px auto; 
+}
+
+.modal-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left; 
+    color: var(--color-text);
+    width: 100%;
+    max-width: 400px; 
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px dashed var(--color-secondary);
+    padding: 10px;
+}
+
+.modal-box li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.modal-box li::before {
+    content: '▶'; 
+    color: var(--color-secondary);
+    position: absolute;
+    left: 0;
+}
+
+
+.hidden {
+    display: none !important; 
+}
+
+
+#difficulty-selector {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px dashed var(--color-primary); 
+    border-radius: 2px;
+}
+
+.diff-btn {
+    font-size: 1em;
+    padding: 8px 15px;
+    margin: 5px;
+    background-color: transparent; 
+    color: var(--color-text);
+    border: 1px solid var(--color-text);
+    border-radius: 0;
+    transition: all 0.2s;
+}
+
+.diff-btn:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.diff-btn.selected {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary);
+}
+
+/* --- DECORATIONS --- */
+
+#decor-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; 
+    pointer-events: none;
+}
+
+
+.hud-line-tl {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 50px;
+    height: 50px;
+    border-top: 2px solid var(--color-primary);
+    border-left: 2px solid var(--color-primary);
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(var(--color-primary), 0.5);
+}
+
+
+.hud-line-br {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    border-bottom: 2px solid var(--color-primary);
+    border-right: 2px solid var(--color-primary);
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(var(--color-primary), 0.5);
+}
+

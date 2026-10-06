@@ -17,6 +17,7 @@ The game reinterprets classic arcade mechanics focusing on clean component separ
   - `entities.js`: Object models for player, enemies, projectiles, and asteroids.
   - `mechanics.js`: Collision detection (AABB), scoring algorithms, and difficulty scaling.
   - `script.js`: Main loop, input handling, and audio effects synchronization.
+- - **Original Pixel Art & Assets:** Custom 2D pixel-art sprites (player spaceship, alien variants, asteroids, projectiles) designed from scratch, paired with retro sound effects via the HTML5 Audio API.
 - **Audio & Visual Assets:** Integrated sprite mapping and responsive sound triggering using the HTML5 Audio API.
 
 ---
